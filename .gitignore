@@ -1,0 +1,9 @@
+/node_modules
+/build
+/dist
+/.vscode
+package-lock.json
+sftp-config.json
+ditspace.sublime-workspace
+ditspace.sublime-project
+ditspace.code-workspace
