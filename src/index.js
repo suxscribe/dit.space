@@ -21,6 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (document.querySelector('.page--index')) {
 		
+		var slideshowMain = new Swiper('.slideshow-nav', {
+			loop: true,
+			loopedSlides: 6,
+			slidesPerView: '1',
+			speed: 600,
+			grabCursor: true,
+			clickable: true, //zrx photoswipe
+			// Navigation arrows
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			allowTouchMove: true,
+			keyboard: {
+				enabled: true,
+			},
+			effect: 'slide',
+
+		});
+
 	}
 
 

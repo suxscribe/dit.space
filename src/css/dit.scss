@@ -1,29 +1,58 @@
 :root {
-
+	--font-main: Natasha, sans-serif;
+	--font-icon: "Font Awesome 5 Free";
 	
-}
+	--font-size: 1.6rem; //
+	--line-height: 1.5;
+	--text-small: 1.4rem; // 
+	--text-large: 2rem; // 
+	--text-lead: 2rem;
+	--line-height-small: 1.5em;
+	--text-h1: 4rem;
+	--text-h2: 3rem;
+	--text-h3: 2rem;
 
 
 
-html {
-	overflow-x: hidden;
+	--gutter: 16px;
+
+	--gutter-small: 16px;
+	--gutter-medium: 28px;
+	--gutter-large: 40px;
+
+	--margin: 16px; //small
+
+	--margin-m: 24px;
+	--margin-2: calc(var(--margin) * 2);
+	--margin-3: calc(var(--margin) * 3);
+	--margin-15: calc(var(--margin) * 1.5);
+
+	--color-black: #000;
+	--color-white: #fff;
+
+	--color-muted: rgba(0,0,0,0.6);
+	--color-header: #9d9e9f;
+
+	--color-accent: #0074d3;
+	--color-accent-light: #94c2e9;
+
+	--color-dark: #323334; // dark-gray bg. header
+	--color-light: #f6f7f8; // light-gray bg
+	--color-border: #cbcbcb;
+
+	--radius: 3px;
+
+	--box-shadow: 0 10px 40px rgba(0,80,146,0.2);
+	--transition: 0.3s ease;
+
+	@media (min-width: $breakpoint-small) {
+		--gutter: 28px;
+	}
+	@media (min-width: $breakpoint-large) {
+		--gutter: 40px;
+	}
 }
 
-body{
-	font-size: var(--font-size);
-	font-weight: 400;
-	line-height: var(--line-height);
-	// background-image: url(../images/om.jpg);
-	max-width: 100vw;
-	overflow-x: hidden;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-main {
-	flex: 1 1 auto;
-	overflow: hidden;
-}
 
 
 a {
@@ -43,23 +72,3 @@ a {
 h1, h2, h3, h4 {
 	font-weight: 700;
 }
-
-h1, .uk-h1 {
-	
-
-
-}
-
-
-h2, .uk-h2 {
-
-}
-
-h3 {
-
-}
-
-h4 {
-
-}
-
