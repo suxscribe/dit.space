@@ -39,7 +39,7 @@ $breakpoint-large-max:                          ($breakpoint-xlarge - 1) !defaul
 // Typography
 //
 
-$global-font-family:                             Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$global-font-family:                             var(--font-main) !default;
 $global-font-size:                               14px !default;
 $global-line-height:                             1.5 !default;      // 24px
 
@@ -97,17 +97,17 @@ $global-xlarge-box-shadow:                       0 28px 50px rgba(0,0,0,0.16) !d
 //
 
 // Used in margin, section, list
-$global-margin:                                  24px !default;
-$global-small-margin:                            10px !default;
-$global-medium-margin:                           40px !default;
-$global-large-margin:                            70px !default;
-$global-xlarge-margin:                           140px !default;
+$global-margin:                                  1.5rem !default;
+$global-small-margin:                            0.5rem !default;
+$global-medium-margin:                           3rem !default;
+$global-large-margin:                            5rem !default;
+$global-xlarge-margin:                           10rem !default;
 
 // Used in grid, column, container, align, card, padding
-$global-gutter:                                  20px !default;
-$global-small-gutter:                            28px !default;
-$global-medium-gutter:                           40px !default;
-$global-large-gutter:                            70px !default;
+$global-gutter:                                  1rem !default;
+$global-small-gutter:                            1.5rem !default;
+$global-medium-gutter:                           3rem !default;
+$global-large-gutter:                            4rem !default;
 
 //
 // Controls
@@ -122,3 +122,5 @@ $global-control-large-height:                    55px !default;
 //
 
 $global-z-index:                                 1000 !default;
+
+

@@ -8,24 +8,14 @@
 	--text-large: 2rem; // 
 	--text-lead: 2rem;
 	--line-height-small: 1.5em;
-	--text-h1: 4rem;
-	--text-h2: 3rem;
-	--text-h3: 2rem;
+	--text-h1: 3.790rem;
+	--text-h2: 2.843rem;
+	--text-h3: 2.133rem;
 
 
 
-	--gutter: 16px;
-
-	--gutter-small: 16px;
-	--gutter-medium: 28px;
-	--gutter-large: 40px;
-
-	--margin: 16px; //small
-
-	--margin-m: 24px;
-	--margin-2: calc(var(--margin) * 2);
-	--margin-3: calc(var(--margin) * 3);
-	--margin-15: calc(var(--margin) * 1.5);
+	--gutter: 1.6rem;
+	--margin: 1.6rem; //small
 
 	--color-black: #000;
 	--color-white: #fff;
@@ -36,7 +26,7 @@
 	--color-accent: #0074d3;
 	--color-accent-light: #94c2e9;
 
-	--color-dark: #323334; // dark-gray bg. header
+	--color-dark: #5f5f5f; // dark-gray bg. header
 	--color-light: #f6f7f8; // light-gray bg
 	--color-border: #cbcbcb;
 
@@ -71,4 +61,8 @@ a {
 
 h1, h2, h3, h4 {
 	font-weight: 700;
+}
+
+h1 {
+	font-size: var(--text-h1);
 }

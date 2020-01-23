@@ -1,7 +1,8 @@
+
+
 .index {
-  
+
   color: var(--color-white);
-  background: var(--color-black) url(/assets/index-bg.jpg) no-repeat;
   background-size: cover;
 
   position: relative;
@@ -9,6 +10,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+
+  
+  &__bg {
+    background: var(--color-black) url(/assets/index-bg.jpg) no-repeat;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+  animation: grain 8s steps(5) infinite;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  }
 
   &__sun {
     // position: absolute;
@@ -20,6 +35,15 @@
       max-width: 30vw;
       margin: 0 auto;
       text-align: center;
+      height: 6vh;
+
+      @media (min-width: $breakpoint-small) {
+        height: 9vh;
+      
+      }
+      @media (min-width: $breakpoint-medium) {
+      
+      }
 
     }
     &-link {
@@ -59,6 +83,19 @@
       max-width: 30vw;
       margin: 0 auto;
       text-align: center;
+      height: 6vh;
+      
+      @media (min-width: $breakpoint-small) {
+        height: 9vh;
+      
+      }
+
+      & img {
+        object-position: bottom;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
     &-icon {
@@ -86,19 +123,30 @@
 
     &-name {
       text-align: center;
-      font-size: var(--text-h1);
+      font-size: var(--text-h2);
 
+      @media (min-width: $breakpoint-medium) {
+        font-size: var(--text-h1);
+      }
 
     }
 
     &-image {
       margin:0 auto;
+      height: 50vh;
 
       @media (min-width: $breakpoint-small) {
-        max-width: 80%;
+        // max-width: 80%;
+        height: 45vh;
+
       }
       @media (min-width: $breakpoint-medium) {
-        max-width: 60%;
+        // max-width: 60%;
+      }
+      @media (min-width: $breakpoint-large) {
+      }
+      @media (min-width: $breakpoint-xlarge) {
+        height: 50vh;
       }
 
       & img {
@@ -110,7 +158,7 @@
   }
 
   &__nav {
-    $slideshow-nav-size: var(--text-h1);
+    $slideshow-nav-size: var(--text-h3);
 
     position: absolute;
     display: block;
@@ -125,8 +173,15 @@
     top: calc(50% - #{$slideshow-nav-size});
     z-index: 1;
 
-    @media (min-width: $breakpoint-medium) {
-      
+    @media (min-width: $breakpoint-small) {
+      $slideshow-nav-size: var(--text-h2);
+      width: $slideshow-nav-size;
+      height: $slideshow-nav-size;
+      line-height: $slideshow-nav-size;
+      font-size: $slideshow-nav-size;
+      top: calc(50% - #{$slideshow-nav-size});
+
+
     }
 
     &:hover {
@@ -175,4 +230,17 @@
   &__l {
     font-size: var(--text-h2);
   }
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(5%, 5%) }
+  30% { transform:translate(7%, -8%) }
+  40% { transform:translate(-5%, 5%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, -8%) }
+  80% { transform:translate(-3%, 10%) }
+  90% { transform:translate(10%, -11%) }
 }

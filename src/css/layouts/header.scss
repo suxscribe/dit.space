@@ -1,7 +1,135 @@
 .header {
 	flex: 0 0 auto;
-	
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	transition: filter var(--transition);
+	z-index: 10;
 
+	&__nav {
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		flex: 0 0 auto;
+		padding: 1rem;
+
+		& a {
+			color: var(--color-white);
+			line-height: 3.6rem;
+			vertical-align: middle;
+			transition: all var(--transition);
+
+			&:hover {
+				color: var(--color-white);
+				font-size: 2rem;
+			}
+			&:focus {
+				color: var(--color-accent-light);
+			}
+		}
+	}
+
+	&__burger {
+		flex: 0 0 auto;
+	}
+	
+	&__burger {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		transition: all 0.2s ease;
+		// position: fixed;
+		// right: 0;
+		// top: 0;
+		z-index: 1000;
+		opacity: 1;
+
+		.uk-modal-page & {
+			// z-index: 10000;
+			opacity: 0;
+		}
+		
+
+		&-toggle {
+				z-index: 2000;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 1rem;
+				box-sizing: content-box;
+				width: 2rem;
+				height: 2rem;
+				left: 0;
+				top: 0;
+				transform: rotate(180deg);
+				transition: transform 0.3s ease 0s;
+
+				& span {
+					display: inline-block;
+					position: relative;;
+					left: 0;
+					height: 2px;
+					background: var(--color-white);
+					width: 2rem;
+					vertical-align: middle;
+					margin-top: -4px;
+
+					transition: width 0.1s 0.3s, background 0.1s 0.3s;
+
+					&:before,
+					&:after {
+						position: absolute;
+						display: block;
+						left: 0;
+						width: 86%;
+						height: 2px;
+						background-color: var(--color-white);
+						content: "";
+						transition-duration: 0.3s, 0.3s;
+						transition-delay: 0.3s, 0s;
+					}
+					
+					&:before {
+						top: -0.5rem;
+						transition-property: top, transform;
+					}
+					
+					&:after {
+						bottom: -0.5rem;
+						transition-property: bottom, transform;
+					}
+				}
+				
+
+				/* active state, i.e. menu open */
+				.uk-modal-page & {
+					transform: rotate(0);
+				}
+				.uk-modal-page & span {
+					background: none;
+					width: 20px;
+				
+				}
+				.uk-modal-page & span:before {
+					top: 0;
+					transform: rotate(45deg);
+				}
+				.uk-modal-page & span:after {
+					bottom: 0;
+					transform: rotate(-45deg);
+				}
+				.uk-modal-page & span:before,
+				.uk-modal-page & span:after {
+					transition-delay: 0s, 0.3s;
+					/*width: 100%;*/
+				}
+		}
+	}
 	
 
 

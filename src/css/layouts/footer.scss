@@ -1,6 +1,25 @@
 .footer {
 	flex: 0 0 auto;
+	margin-top: $margin * 3;
+	padding-top: $margin * 2;
+	padding-bottom: $margin * 2;
+	background: url(/assets/footer-bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: top;
+	transition: filter var(--transition);
 
 
+	&__socials {
 
+	}
+
+	&__social {
+		display: block;
+		margin-bottom: 0.5rem;
+		color: var(--color-muted);
+
+		&-icon {
+			margin-right: 1rem;
+		}
+	}
 }

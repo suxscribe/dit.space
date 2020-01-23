@@ -39,6 +39,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/html/views/index.html',
 		}),
+		new HtmlWebpackPlugin({
+			filename: 'project.html',
+			template: './src/html/views/project.html',
+		}),
 
 		new MiniCssExtractPlugin({
 			// Options similar to the same options in webpackOptions.output

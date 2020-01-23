@@ -1,4 +1,4 @@
-$global-margin: 24px !default;
+$global-margin: 1.5rem !default;
 $accordion-item-margin-top: 2px !default;
 $global-medium-font-size: 1.25rem !default;
 $accordion-title-font-size: $global-medium-font-size !default;
@@ -81,7 +81,7 @@ $inverse-badge-color: $inverse-global-inverse-color !default;
 $inverse-badge-hover-color: $inverse-global-inverse-color !default;
 $base-body-background: $global-background !default;
 
-$global-font-family: 'PT Sans', Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$global-font-family: var(--font-main) !default;
 $base-body-font-family: $global-font-family !default;
 $base-body-font-weight: normal !default;
 $global-font-size: var(--font-size) !default;
@@ -108,7 +108,7 @@ $base-mark-color: $global-color !default;
 $base-quote-font-style: italic !default;
 $base-small-font-size: 80% !default;
 $base-margin-vertical: $global-margin !default;
-$base-heading-font-family: 'Roboto Condensed', sans-serif;
+$base-heading-font-family: var(--font-main), sans-serif;
 $base-heading-font-weight: 700 !default;
 $base-heading-color: $global-emphasis-color !default;
 $base-heading-text-transform: none !default;

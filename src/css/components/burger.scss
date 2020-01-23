@@ -10,7 +10,7 @@
 	&__dialog {
 		min-height: 100vh;
 		padding: 5rem 0;
-		background: var(--color-black);
+		background: rgba(0,0,0,0.9);
 		color: var(--color-white);
 	}
 
@@ -48,7 +48,7 @@
 			margin-bottom: 0;
 			padding: 24px;
 			text-align: center;
-			padding: 1.3rem;
+			padding: 1.1rem;
 
 			&:after {
 
@@ -58,7 +58,6 @@
 				color: var(--color-accent);
 				// opacity: 0.8;
 			}
-
 
 		}
 
@@ -89,4 +88,14 @@
 	}
 
 	
+}
+
+.uk-modal-page  {
+
+	& .header,
+	& .main,
+	& .footer {
+
+		// filter:blur(1px);
+	}
 }

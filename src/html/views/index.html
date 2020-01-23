@@ -1,11 +1,25 @@
 <% var data = {
-	title: "Заголовок | Проект",
+	page: "index",
 }; %>
-<%= _.template(require('./../includes/header-index.html'))(data) %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<%= _.template(require('./../includes/index.html'))(data) %>
+	<title>DIT</title>
 
-<%= _.template(require('./../includes/footer-index.html'))(data) %>
+</head>
+<body class="page page--index" data-router-wrapper>
 
-<%= _.template(require('./../includes/footer.html'))(data) %>
+	<section class="page__wrap" data-router-view="index">
 
+	<%= _.template(require('./../includes/index.html'))(data) %>
+
+	<%= _.template(require('./../includes/footer.html'))(data) %>
+	
+	</section>
+
+
+</body>
+</html>

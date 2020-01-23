@@ -27,6 +27,8 @@ $global-link-color: #DA7D02;
 
 $dropdown-margin:																 0;
 $offcanvas-bar-background: 												#fff;
+$margin: 1.6rem;
+$gutter: 1.6rem;
 
 
 @import "uikit/src/scss/components/mixin.scss";
@@ -164,10 +166,10 @@ $offcanvas-bar-background: 												#fff;
 @import "layouts/header";
 @import "layouts/footer";
 
-@import "components/news";
 @import "components/burger";
 @import "components/search";
 @import "components/breadcrumbs";
 @import "components/file";
 
 @import "pages/index";
+@import "pages/project";
