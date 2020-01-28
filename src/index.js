@@ -6,18 +6,65 @@ import Swiper from 'swiper';
 import Highway from '@dogstudio/highway';
 import {TimelineLite} from 'gsap';
 
+
+
+
+
 class Fade extends Highway.Transition {
 	in({from, to, done}) {
 
+		// const tl = new TimelineLite();
+		// tl.fromTo(to, 0.5, {left: '0%'}, {left: '0%', opacity: 0})
+		// .fromTo(to, 0.5, {opacity: 0 }, {opacity: 1, onComplete: function() {
+		// 	from.remove();
+		// 	done();
+		// }});
+
 		const tl = new TimelineLite();
-		tl.fromTo(to, 0.5, {left: '-100%', top: '50%'}, {left: '0%'})
-		.fromTo(to, 0.5, {height: '2vh'}, {height:'90vh', top: '10%', onComplete: function() {
-			from.remove();
-			done();
-		}});
+		// Reset Scroll
+		window.scrollTo(0, 0);
+
+		// Remove Old View
+		from.remove();
+	
+		// Animation
+		tl.fromTo(to, 0.5,
+		  { opacity: 0 },
+		  {
+			opacity: 1,
+			onComplete: done
+		  }
+		);
+
+		// Hangle Burger modal on page change
+		var burger = document.getElementById('burger');
+		const moveBurgerBack = (event) => {
+			document.querySelector('.page__wrap').appendChild(burger);
+			console.log('burger moved');
+		}
+		burger.addEventListener('hidden', moveBurgerBack, false);
+
 	}
 	out({from, done}) {
-		done();
+
+		var burger = document.getElementById('burger');
+		burger.remove();
+		const moveBurgerBack = (event) => {
+			document.querySelector('.page__wrap').appendChild(burger);
+			console.log('burger moved');
+		}
+		burger.removeEventListener('hidden', moveBurgerBack, false);
+
+		console.log('moved');
+		const tl = new TimelineLite();
+		// Animation
+		tl.fromTo(from, 0.5,
+			{ opacity: 1 },
+			{
+			  opacity: 0,
+			  onComplete: done
+			}
+		);
 	}
 }
 
@@ -26,6 +73,8 @@ const H = new Highway.Core({
 		default: Fade
 	}
 });
+
+
 
 // loads the Icon plugin
 UIkit.use(Icons);
@@ -67,14 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 	if (document.querySelector('.project')) {
-		document.querySelector('.header__burger').addEventListener('click', () => {
-			var burger = UIkit.modal("#burger");
+		// document.querySelector('.header__burger').addEventListener('click', () => {
+		// 	var burger = UIkit.modal("#burger");
 	
-			burger.toggle();
-			return false;
-		});
+		// 	burger.toggle();
+		// 	return false;
+		// });
 	}
 
 
 
 });
+
+
+

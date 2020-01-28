@@ -61,5 +61,9 @@ body{
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
 	}
 }

@@ -10,15 +10,19 @@
 	<title>DIT</title>
 
 </head>
-<body class="page page--index" data-router-wrapper>
+<body class=" " >
 
-	<section class="page__wrap" data-router-view="index">
-
-	<%= _.template(require('./../includes/index.html'))(data) %>
-
-	<%= _.template(require('./../includes/footer.html'))(data) %>
+	<div class="page" data-router-wrapper>
+		
+		<section class="page__wrap page--index" data-router-view="index">
 	
-	</section>
+		<%= _.template(require('./../includes/index.html'))(data) %>
+	
+		<%= _.template(require('./../includes/footer.html'))(data) %>
+		
+		</section>
+
+	</div>
 
 
 </body>

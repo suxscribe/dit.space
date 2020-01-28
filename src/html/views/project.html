@@ -7,22 +7,25 @@
 	<title>DIT</title>
 
 </head>
-<body class="page--project" data-router-wrapper>
+<body class="" >
 
-	<section class="project" data-router-view="project">
-		
-	<% var data = {
-		page: "project",
-	}; %>
-	<%= _.template(require('./../includes/header.html'))(data) %>
+	<div class="page" data-router-wrapper>
 
-	<%= _.template(require('./../includes/project.html'))(data) %>
-
-	<%= _.template(require('./../includes/footer-inner.html'))(data) %>
-
-	<%= _.template(require('./../includes/footer.html'))(data) %>
-
-	</section>
+		<section class="page__wrap project page--project" data-router-view="project">
+			
+		<% var data = {
+			page: "project",
+		}; %>
+		<%= _.template(require('./../includes/header.html'))(data) %>
+	
+		<%= _.template(require('./../includes/project.html'))(data) %>
+	
+		<%= _.template(require('./../includes/footer-inner.html'))(data) %>
+	
+		<%= _.template(require('./../includes/footer.html'))(data) %>
+	
+		</section>
+	</div>
 
 </body>
 </html>

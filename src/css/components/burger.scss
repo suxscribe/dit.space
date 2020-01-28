@@ -32,7 +32,7 @@
 				transform: translateY(0);
 			}
 
-			@for $i from 1 through 10 {
+			@for $i from 1 through 15 {
 				&:nth-child(#{$i}) {				
 					transition-delay: 0.1s * $i;
 				}
