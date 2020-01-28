@@ -8,3 +8,6 @@ ditspace.sublime-workspace
 ditspace.sublime-project
 ditspace.code-workspace
 deploy.js
+*.webm
+*.ogv
+*.mp4
