@@ -1,5 +1,10 @@
 <main class="main index main--index0" >
-		<div class="index__bg"></div>
+		<div class="index__bg">
+			<video id=0 autoplay loop muted playinline>
+				<source src="../../assets/index-bg.webm" type='video/webm' >
+				<p>Seems that your browser does not support HTML5 video. Sadly =(</p>
+			</video>
+		</div>
 		
 		<div class="index__sun">
 	
@@ -8,17 +13,21 @@
 					<img src="../../assets/sun.png" alt="">
 				</div>
 				<div class="index__sun-title">rendering</div>
-				<i class="fa fa-chevron-up icon__m"></i>
+				<div class="index__sun-icon ">
+					<div class="arrow ">
+						<span class="left-arm"></span>
+						<span class="right-arm"></span>
+					</div>
+				</div>
 			</a>
 		</div>
-	
+
 		<div class="index__nav">
 			
-			<div class="slideshow-nav swiper-container">
-				<div class="slideshow-nav__wrapper swiper-wrapper">
+			<div class="slideshow-nav swiper-container "> 
+				<div class="slideshow-nav__wrapper swiper-wrapper ">
 					<div class="slideshow-nav__item swiper-slide">
 						<a href="project.html">
-							<!-- <div class="slideshow-nav__item-name">VFX</div> -->
 	
 							<div class="slideshow-nav__item-image">
 								<img src="../../assets/index-service-cgi.png" alt="">
@@ -34,12 +43,16 @@
 							</div>
 						</a>
 					</div>
-					<div class="slideshow-nav__item swiper-slide">
+					<div class="slideshow-nav__item slideshow-nav__item--production swiper-slide">
 						<a href="project.html">
 							<div class="slideshow-nav__item-name">PRODUCTION</div>
 	
 							<div class="slideshow-nav__item-image">
-								<img src="../../assets/index-service-production.png" alt="">
+								<!-- <img src="../../assets/index-service-production.png" alt=""> -->
+								<video id=0 autoplay loop muted playinline>
+									<source src="../../assets/index-service-production.webm" type='video/webm' >
+									<img src="../../assets/index-service-production.png" alt="">
+								</video>
 							</div>
 						</a>
 					</div>
@@ -61,24 +74,28 @@
 							</div>
 						</a>
 					</div>
-					<div class="slideshow-nav__item swiper-slide">
+					<div class="slideshow-nav__item slideshow-nav__item--colour swiper-slide">
 						<a href="project.html">
-							<div class="slideshow-nav__item-name">DITSPACE</div>
+							<div class="slideshow-nav__item-name">COLOUR</div>
 	
 							<div class="slideshow-nav__item-image">
-								<img src="../../assets/index-service-ditspace.png" alt="">
+								<img src="../../assets/index-service-colour.png" alt="">
 							</div>
 						</a>
-					</div>
+					</div>	
 				</div>
 				
-				<div class="slideshow-nav__nav slideshow-nav__nav-prev arrow arrow--prev swiper-button-prev">
-					<div class="arrow-top"></div>
-					<div class="arrow-bottom"></div>
+				<div class="slideshow-nav__nav slideshow-nav__nav-prev  swiper-button-prev ">
+					<div class="arrow arrow--left-l">
+						<span class="left-arm"></span>
+						<span class="right-arm"></span>
+					</div>
 				</div>
-				<div class="slideshow-nav__nav slideshow-nav__nav-next arrow swiper-button-next">
-					<div class="arrow-top"></div>
-					<div class="arrow-bottom"></div>
+				<div class="slideshow-nav__nav slideshow-nav__nav-next  swiper-button-next ">
+					<div class="arrow arrow--right-l">
+						<span class="left-arm"></span>
+						<span class="right-arm"></span>
+					</div>
 				</div>
 				
 			</div>
@@ -87,13 +104,17 @@
 		
 		<div class="index__logo">
 			<a href="#burger" uk-toggle class="index__logo-link">
-				<i class="index__logo-icon fa fa-chevron-down icon__m"></i>
+				<div class="index__logo-icon ">
+					<div class="arrow arrow--down">
+						<span class="left-arm"></span>
+						<span class="right-arm"></span>
+					</div>
+				</div>
 				<div class="index__logo-title">more</div>
 				<div class="index__logo-img">
 					<img src="../../assets/index-bottom-logo.png" alt="">
 				</div>
 			</a>
-	
 		</div>
 
 </main>

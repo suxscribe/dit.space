@@ -1,0 +1,63 @@
+.project {
+
+    &__top {
+        margin-bottom: $margin * 2;
+
+        /* 0 - 640px + landscape
+        w100vw
+        h100vh */
+
+
+        &-media {
+
+            & > * {
+                @media all and (orientation:landscape) {
+                    width: 100vw;
+                    height: 100vh;
+                    object-fit: cover;
+                }
+        
+                @media all and (orientation:portrait) {
+                    width: 100vw;
+                    height: auto;
+                }
+        
+                @media all and (min-width: $breakpoint-medium) and (orientation:landscape) {
+                    height: auto;
+                }
+            }
+
+            & video {
+                
+            }
+        }
+
+        &-icon {
+            text-align: center;
+
+            @media all and (orientation:landscape) {
+                display: none;
+            }
+            @media all and (orientation:portrait) {
+                display: block;
+            }
+            @media all and (min-width: $breakpoint-medium) and (orientation:landscape) {
+                display: none;
+            }
+        }
+    }
+
+    &__main {
+        margin-top: $margin * 2;
+        margin-bottom: $margin * 2;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__description {
+        text-align: center;
+        font-size: 2rem;
+    }
+}

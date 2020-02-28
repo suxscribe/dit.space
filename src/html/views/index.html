@@ -16,9 +16,11 @@
 		
 		<section class="page__wrap page--index" data-router-view="index">
 	
-		<%= _.template(require('./../includes/index.html'))(data) %>
+		<%= _.template(require('./../includes/header.html').default)(data) %>
+
+		<%= _.template(require('./../includes/index.html').default)(data) %>
 	
-		<%= _.template(require('./../includes/footer.html'))(data) %>
+		<%= _.template(require('./../includes/footer.html').default)(data) %>
 		
 		</section>
 
