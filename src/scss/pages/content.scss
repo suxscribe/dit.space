@@ -56,15 +56,21 @@
     margin: 5rem calc(50% - 50vw);
 
     @media (min-width: $breakpoint-small) {
-      margin: 0 calc(50% - 40vw);
+      margin: 0 calc(50% - 50vw);
 
     }
     @media (min-width: $breakpoint-medium) {
-      margin: 0 calc(50% - 30vw);
+      margin: 0 calc(50% - 50vw);
 
     }
+    @media (min-width: $breakpoint-large) {
+      margin: 0 calc(50% - 40vw);
+    }
+    @media (min-width: $breakpoint-xlarge) {
+      margin: 0 calc(50% - 35vw);
+    }
 
-    & * {
+    & > * {
       width: 100%;
     }
   }
@@ -88,4 +94,33 @@
         height: 100%;
       }
   }
+}
+
+.bubble {
+	position: relative;
+	background: var(--color-accent);
+  border-radius: .5em;
+  padding: 1rem 1.5rem ;
+  font-size: 1.2rem;
+  color: var(--color-white);
+  
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 85%;
+    width: 0;
+    height: 0;
+    border: 1rem solid transparent;
+    border-top-color: var(--color-accent);
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -1rem;
+    margin-bottom: -1rem;
+  }
+
+  & > p {
+    margin-bottom: 0;
+  }
+
 }

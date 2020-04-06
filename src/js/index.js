@@ -192,8 +192,11 @@ const pageScriptsLoad = () => {
     console.log("TCL: number of images", len);
 
 	[].forEach.call( imgs, function( img ) {
-		if(img.complete)
-		incrementCounter();
+		if(img.complete) {
+			incrementCounter();
+			console.log("TCL: pageScriptsLoad -> counter", counter)
+			console.log('image src', img.src);
+		}
 		else
 		img.addEventListener( 'load', incrementCounter, false );
 	} );

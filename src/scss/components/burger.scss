@@ -86,8 +86,9 @@
 		position: static;
 		padding: 0;
 
-		&:hover {
+		&:hover, &:focus {
 			// color: var(--color-accent);
+			outline: none;
 
 			& svg line {
 
