@@ -219,6 +219,8 @@ const pageScriptsLoad = () => {
 		}
 	}
 
+	// stop preloader after 7000ms
+	setTimeout(() => {  hidePreloader(); }, 7000);
 	
 	// for index page only
 	if (document.querySelector('.page--index')) {
@@ -244,6 +246,8 @@ const pageScriptsLoad = () => {
 			// cssMode:true,
 
 		});
+
+
 		const slideshow = document.querySelector('.slideshow-nav');
 		const slideshowNavNext = document.querySelector('.slideshow-nav__nav-next');
 		const slideshowNavPrev = document.querySelector('.slideshow-nav__nav-prev');
@@ -254,6 +258,23 @@ const pageScriptsLoad = () => {
 		const logoTitle = document.querySelector('.index__logo-title');
 		const logoIcon = document.querySelector('.index__logo-icon');
 
+		// pause not active slides
+		const slideshowSlides = document.querySelectorAll('.slideshow-nav__item-image video');
+		const pauseSlideshowSlides = () => {
+			slideshowSlides.forEach((el,i) => {
+				if (i === slideshowMain.activeIndex) {
+					el.play();
+				} else {
+					el.pause();
+				}
+			})
+		};
+		slideshowMain.on('init', function() {
+			pauseSlideshowSlides();
+		});
+		slideshowMain.on('slideChange', function() {
+			pauseSlideshowSlides();
+		});
 
 		const tween = new TimelineLite();
 		
