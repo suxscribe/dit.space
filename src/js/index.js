@@ -8,12 +8,13 @@ import Swiper from 'swiper';
 import Highway from '@dogstudio/highway';
 import {TimelineLite, CSSPlugin} from 'gsap/all';
 
+// loads the Icon plugin
+UIkit.use(Icons);
+
 const plugins = [ CSSPlugin];
 
 // Force CSSPlugin to not get dropped during build
 // gsap.registerPlugin(CSSPlugin)
-
-// import 'pace-progressbar/themes/black/pace-theme-center-simple.css';
 
 // const paceOptions = {
 // 	ajax: true,
@@ -31,25 +32,9 @@ if (document.querySelector('.page--index')) {
 	
 }
 
-
-// loads the Icon plugin
-UIkit.use(Icons);
-
-// components can be called from the imported UIkit reference
-// import 'uikit/dist/css/uikit.min.css';
-// import './css/style.scss';
-
-
 // Page Transition FADE
 class Fade extends Highway.Transition {
 	in({from, to, done}) {
-
-		// const tl = new TimelineLite();
-		// tl.fromTo(to, 0.5, {left: '0%'}, {left: '0%', opacity: 0})
-		// .fromTo(to, 0.5, {opacity: 0 }, {opacity: 1, onComplete: function() {
-		// 	from.remove();
-		// 	done();
-		// }});
 
 		const tl = new TimelineLite();
 		// Reset Scroll
@@ -85,16 +70,7 @@ class Fade extends Highway.Transition {
 	}
 	out({from, done}) {
 
-
 		pageScriptsUnload();
-
-		// const moveBurgerBack = (event) => {
-		// 	document.querySelector('.page__wrap').appendChild(burger);
-		// 	console.log('burger moved');
-		// }
-		// burger.removeEventListener('hidden', moveBurgerBack, false);
-
-		// document.querySelector('.pace').remove();
 
 		console.log('moved');
 		const tl = new TimelineLite();
@@ -159,7 +135,7 @@ class Overlap extends Highway.Transition {
 		// TODO Add pageScriptsUnload(); 
 	  	done();
 	}
-  }
+}
   
 const H = new Highway.Core({
 	transitions: {
@@ -227,9 +203,9 @@ const pageScriptsLoad = () => {
 			
 		var slideshowMain = new Swiper('.slideshow-nav', {
 			loop: true,
-			loopedSlides: 6,
-			slidesPerView: 'auto',
-			speed: 600,
+			// loopedSlides: 6,
+			// slidesPerView: '1',
+			// speed: 600,
 			grabCursor: true,
 			clickable: true, //zrx photoswipe
 			// Navigation arrows
@@ -241,12 +217,16 @@ const pageScriptsLoad = () => {
 			keyboard: {
 				enabled: true,
 			},
-			effect: 'slide',
+			// effect: 'flip',
 			centeredSlides: true,
+			crossfade: true,
 			// cssMode:true,
 
 		});
 
+		slideshowMain.on('init', () => {
+			slideshowMain.update();
+		});
 
 		const slideshow = document.querySelector('.slideshow-nav');
 		const slideshowNavNext = document.querySelector('.slideshow-nav__nav-next');
@@ -290,6 +270,16 @@ const pageScriptsLoad = () => {
 		tween.from(logoTitle, 0.2, {y: '5vh', opacity:'0'}, 2);
 		tween.from(logoIcon, 0.3, {y: '5vh', opacity:'0'}, 2);
 
+	} // page index
+	if (document.querySelector('.page--stream'))  { // || document.querySelector('.page--index'))
+		if (document.querySelector('#twitch-embed')) {
+			const twitchChannel = document.querySelector('.content__top-media').dataset.twitch;
+			new Twitch.Embed("twitch-embed", {
+				channel: twitchChannel,
+				layout: "video",
+				autoplay: false
+			});
+		}
 	}
 
 	if (document.querySelector('.watch-scroll')) {
@@ -297,7 +287,7 @@ const pageScriptsLoad = () => {
 		window.addEventListener("scroll", watchScroll);
 	}
 
-};
+}; // pageScriptsLoad
 
 const pageScriptsUnload = () => {
 

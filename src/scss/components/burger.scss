@@ -86,6 +86,10 @@
 		position: static;
 		padding: 0;
 
+		background: none;
+		border:none;
+		cursor: pointer;
+
 		&:hover, &:focus {
 			// color: var(--color-accent);
 			outline: none;

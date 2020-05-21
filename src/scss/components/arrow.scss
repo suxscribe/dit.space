@@ -146,14 +146,14 @@ $arrow-width: 4rem;
 
 .arrow {
   // background-color: #111;
-  height: 40px;
-  width: 40px;
+  height: 5rem;
+  width: 5rem;
   display: block;
   // border: 1px solid #666;
   position: relative;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
-  overflow: hidden;
+  // overflow: hidden;
   margin: 0 auto;
 
   &--down {
@@ -185,6 +185,14 @@ $arrow-width: 4rem;
       transition: all .4s ease-in-out;
       transform: translateY(200%);
     }
+  }
+
+  &-left-video {
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    max-width: none;
+    transform: translate(-4rem, -5rem);
   }
 }
 
